@@ -14,3 +14,14 @@ The API reference doc (docs/API.md) lists the POST /profiles endpoint but only g
 **Setup confirmation:** [x] App runs locally at localhost:5173
 
 **Cohort ledger:** [ ] Issue added to cohort ledger
+
+
+
+**Selection notes:**
+I initially looked at #97, #87, and #101. #87 was Tier 3 (new webhook infrastructure) 
+and #97 turned out to be Tier 3 as well, despite reading like a smaller frontend fix — 
+its label was the deciding factor. #101 was Tier 2. Since this is my first open source 
+contribution, the checklist says to stick with Tier 1, so I went back to the tracker 
+filtered by tier-1 and found #89. It's confined to one doc file, has a clear before/after 
+(missing schema vs. documented schema), and I confirmed the actual request body by reading 
+api/routes/profiles.py before claiming it.
