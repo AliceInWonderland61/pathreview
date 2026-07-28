@@ -25,3 +25,23 @@ contribution, the checklist says to stick with Tier 1, so I went back to the tra
 filtered by tier-1 and found #89. It's confined to one doc file, has a clear before/after 
 (missing schema vs. documented schema), and I confirmed the actual request body by reading 
 api/routes/profiles.py before claiming it.
+
+
+## Week 8 — Reproduction & solution planning
+
+**Reproduction commit link:** https://github.com/AliceInWonderland61/pathreview/commit/96ebed43cdd8394b1fa270aef3e6911a2f470a7a
+
+**Reproduction summary:**
+Confirmed `docs/API.md` documents no request body schema for `POST /profiles`
+by reading `api/routes/profiles.py` — the endpoint actually expects
+`multipart/form-data` with three optional fields, one of which is a file
+upload with its own validation. Committed a note in `docs/API.md` marking
+exactly what's missing.
+
+**PLAN.md link:** https://github.com/AliceInWonderland61/pathreview/blob/docs/89-profiles-request-body-schema/PLAN.md
+
+
+**Blockers or open questions:**
+Issue #89 mentions both POST /profiles and POST /reviews, but I scoped this
+to /profiles only, matching the issue title — flagged in PLAN.md's Risks
+section.
