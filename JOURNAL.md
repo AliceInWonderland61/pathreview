@@ -45,3 +45,24 @@ exactly what's missing.
 Issue #89 mentions both POST /profiles and POST /reviews, but I scoped this
 to /profiles only, matching the issue title — flagged in PLAN.md's Risks
 section.
+
+
+## Week 9 — Solution building & PR submission
+
+### Check-in 1 (mid-week)
+
+**Current progress:**
+Implemented the fix from PLAN.md — updated the `POST /profiles` entry in
+`docs/API.md` with the full request schema: content type
+(`multipart/form-data`), a field table (github_username, portfolio_url,
+resume_file with types and required/optional status), an example curl
+request, and the 422 error case for invalid resume file types. Ran
+`make check` and `make test-unit` before and after my change to confirm
+I introduced no new failures.
+
+**Next steps:**
+Open a draft PR and get feedback from a peer or mentor in Slack before
+marking it ready for review.
+
+**Blockers:**
+None at them moment. 
