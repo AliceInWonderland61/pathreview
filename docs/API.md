@@ -35,6 +35,8 @@ curl -X POST http://localhost:8000/profiles \
 
 **Errors:**
 - `422 Unprocessable Entity` — returned if `resume_file` is provided but is not a PDF, Markdown, or plain text file.
+
+
 `GET /profiles/{profile_id}` — Retrieve a profile.
 `DELETE /profiles/{profile_id}` — Delete a profile and associated data.
 
