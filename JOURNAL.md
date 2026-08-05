@@ -66,3 +66,26 @@ marking it ready for review.
 
 **Blockers:**
 None at them moment. 
+
+
+### Check-in 2 (end of week)
+
+**PR link:** https://github.com/ascherj/pathreview/pull/830
+
+**Branch:** docs/89-profiles-request-body-schema
+
+**What you built:**
+Added the missing request body schema for POST /profiles to docs/API.md —
+content type (multipart/form-data), a field table (github_username,
+portfolio_url, resume_file with types and required/optional status), an
+example curl request, and the 422 error case for invalid resume file types.
+
+**Tests added or updated:**
+None — docs-only change, no testable code. Ran `make check` and
+`make test-unit` before and after to confirm no new failures (182
+pre-existing lint errors, 53 pre-existing test failures, both unrelated to
+this change).
+
+**Self-review confirmation:** [x] make check passes  [x] make test-unit passes
+
+**Draft PR feedback received from:** no one answered, but that's on me I asked a bit too late
