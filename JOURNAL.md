@@ -89,3 +89,70 @@ this change).
 **Self-review confirmation:** [x] make check passes  [x] make test-unit passes
 
 **Draft PR feedback received from:** no one answered, but that's on me I asked a bit too late
+
+
+## Week 10 — Iteration & reflection
+
+### Reviewer feedback
+
+**Feedback received:** [x] Yes  [ ] No — still awaiting review
+
+**Summary of feedback:**
+Reviewer praised the completeness of the PR template and the specificity
+of my Testing section notes on pre-existing failures. Suggested
+improvements: make the PR title more specific, expand the Summary section
+to explain why the schema matters for developers/users, explicitly write
+"N/A — <reason>" in empty sections instead of leaving them blank, and —
+for future issues — reach out to the issue creator if the title and
+description scope mismatch, rather than silently picking one
+interpretation.
+
+**How you responded:**
+Replied on the PR thanking the reviewer, then updated the title to
+"docs: add POST /profiles body schema to API reference", expanded the
+Summary section to explain the practical impact of the missing schema on
+developers, and updated Screenshots/Demo to an explicit
+"N/A — documentation-only change, no UI or visual output to demo."
+Acknowledged the scope-mismatch suggestion for future issues.
+
+
+**What was harder than you expected?**
+Reading the output of `make check` and `make test-unit` for the first time
+was more overwhelming than I expected — 182 lint errors and 53 test
+failures looked like I had broken something, even though I'd only edited
+a markdown file. I had to learn to actually scan the output for whether
+any of it touched files I'd changed, rather than assuming a wall of red
+text meant I'd done something wrong.
+
+**What did you learn about working in a large codebase?**
+Documentation can somewhat drift from the actual code without anyone noticing. For example, the docs/API.md never mentioned that POST /profiles used multipart/form-data
+instead of JSON. I had to read the route handler
+directly rather than trusting the schema file (I assumed this would be the right place to check but it wasn't). I also learned that a codebase can carry pre-existing, unrelated failures (182 lint errors, 53 test failures) that aren't your
+responsibility to fix, just not add onto it. 
+
+**How did AI tools help — and where did they fall short?**
+Claude was really helpful for pulling the actual repo code so I didn't
+have to dig through GitHub manually, and for turning my messy notes into
+the actual PLAN.md/PR format the grader wanted. It was also good for
+walking me through git stuff step by step when I got confused (like
+auth issues when pushing, or figuring out branch tracking). Where it
+fell short is it can't actually do the investigation for me — I still
+had to be the one to read the route code, decide what the real request
+shape was, and figure out how to scope the issue myself. It also
+couldn't tell me whether make check's errors were mine or not, I had to
+actually look and compare line by line.
+
+**What would you do differently if you started over?**
+I'd actually read CONTRIBUTING.md before making my very first commit
+instead of finding out about the branch naming and commit message rules
+partway through Week 9 — my early commits weren't quite right because I
+just didn't know the convention yet. Also, when I got feedback that the
+issue mentioned two endpoints but I only did one, the reviewer pointed
+out I should've just asked the issue creator to clarify instead of
+guessing and picking one myself. I'll actually do that next time instead
+of assuming my interpretation is right.
+
+**What are you most proud of from this module?**
+Honestly just finishing. Nothing too elaborate, I'm just happy I was able
+to get through the whole thing and actually navigate all the instructions
+without giving up somewhere in the middle.
